@@ -1,0 +1,72 @@
+name: "MyAnimeList readme workflow"
+author: "MoonLGH"
+description: "Puts your newest activity from MyAnimeList into your readme"
+
+inputs:
+    username:
+        description: "Your MAL user username"
+        default: ""
+        required: true
+
+    gh_token:
+        description: "GitHub access token with Repo scope"
+        default: ${{ github.token }}
+        required: true
+
+    readme_path:
+        description: "Path of the readme file you want to update"
+        default: ""
+        required: true
+
+    branch:
+        description: "Branch of the README.md"
+        default: "main"
+        required: false
+
+    limit:
+        description: "Limit of history"
+        default: "30"
+        required: false
+        
+    width:
+        description: "width of the image"
+        default: "150"
+        required: false
+        
+    height:
+        description: "height of the image"
+        default: "200"
+        required: false
+            
+    filename:
+        description: "height of the image"
+        default: "README.md"
+        required: false
+
+runs:
+    using: "composite"
+    steps:
+        - uses: actions/checkout@v2
+        - name: cloning MAL_Autolist
+          run: git clone https://github.com/MoonLGH/MAL_Autolist.git
+          shell: bash
+        - name: Set Node.js 14
+          uses: actions/setup-node@v2.4.1
+          with:
+               node-version: 14
+        - name: Install dependencies
+          working-directory: ./MAL_Autolist
+          run: npm i
+          shell: bash
+        - name: Run the script
+          working-directory: ./MAL_Autolist
+          run: node index.js
+          shell: bash
+          env:
+              username: ${{ inputs.username }}
+              gh_token: ${{ inputs.gh_token }}
+              readme_path: ${{ inputs.readme_path }}
+              limit: ${{ inputs.limit }}
+              height: ${{ inputs.height }}
+              width: ${{ inputs.width }}
+              filename: ${{ inputs.filename }}
