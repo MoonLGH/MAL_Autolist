@@ -6,6 +6,7 @@ const git = require("korefile")
 async function init(){
     let { username,readme_path,branch,gh_token,limit,width,height,filename } = process.env;
 
+    console.log(username)
     let Animelist = await parse.AnimeLoadparseList(username,limit)
     let Mangalist = await parse.MangaLoadparseList(username,limit)
 
