@@ -65,6 +65,7 @@ runs:
               username: ${{ inputs.username }}
               gh_token: ${{ inputs.gh_token }}
               readme_path: ${{ inputs.readme_path }}
+              branch: ${{ inputs.branch }}
               limit: ${{ inputs.limit }}
               height: ${{ inputs.height }}
               width: ${{ inputs.width }}
