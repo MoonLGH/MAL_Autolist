@@ -11,7 +11,7 @@ inputs:
     gh_token:
         description: "GitHub access token with Repo scope"
         default: ${{ github.token }}
-        required: true
+        required: false
 
     readme_path:
         description: "Path of the readme file you want to update"
