@@ -70,3 +70,6 @@ runs:
               height: ${{ inputs.height }}
               width: ${{ inputs.width }}
               filename: ${{ inputs.filename }}
+        - name: cleaning directory
+          run: rm -rf MAL_Autolist
+          shell: bash
