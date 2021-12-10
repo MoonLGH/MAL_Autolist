@@ -46,7 +46,6 @@ inputs:
 runs:
     using: "composite"
     steps:
-        - uses: actions/checkout@v2
         - name: cloning MAL_Autolist
           run: git clone https://github.com/MoonLGH/MAL_Autolist.git
           shell: bash
