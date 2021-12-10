@@ -9,9 +9,6 @@ async function init(){
     console.log(username)
     let Animelist = await parse.AnimeLoadparseList(username,limit)
     let Mangalist = await parse.MangaLoadparseList(username,limit)
-
-    console.log(Animelist)
-    console.log(Mangalist)
     
     let readme = await readmeutil.readme(readme_path,filename,gh_token)
 
