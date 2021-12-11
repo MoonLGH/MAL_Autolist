@@ -18,6 +18,10 @@ async function init(){
         throw new Error("Enter a token");
     }
 
+    if(readme === newreadme){
+        console.log("No new entries")
+        return
+    }
     console.log("Pushing to Github")
     let file = git.createKoreFile({
         adaptor: git.createGitHubAdaptor({
