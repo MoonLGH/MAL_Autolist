@@ -2,6 +2,7 @@
 
 > Simple workflow that will add your latest MAL History into your readme!
 
+> Revamped Version on [gamersindo1223/MAL-ReadmeList](https://github.com/gamersindo1223/MAL-ReadmeList)
 
 ## Note
 
